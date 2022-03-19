@@ -24,3 +24,15 @@ void drawRect(const int16_t x, const int16_t y, const int16_t w, const int16_t h
         }
     }
 }
+
+void drawBitMap(const int16_t x, const int16_t y, const uint16_t c, const bitmap_t *b, uint16_t *fbuff){
+    for(uint16_t xx = 0; xx < b->w; xx++){
+        for(uint16_t yy = 0; yy < b->h; yy++){
+            if(b->buff[xx + yy * b->w] == 0x0){
+                continue;
+            }
+
+            drawPixel(x + xx, y + yy, c, fbuff);
+        }
+    }
+}

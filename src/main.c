@@ -11,6 +11,14 @@ int main(){
 
 
     lcd_init(SCR_320x240_565);
+
+
+    bitmap_t txt_a;
+    txt_a.buff = FONT_A;
+    txt_a.h = FONT_HEIGHT;
+    txt_a.w = FONT_WDITH;
+
+    drawBitMap(5, 5, to16Bit(0,255,0), &txt_a, screen);
     while(isRunning){
         if(isKeyPressed(KEY_NSPIRE_ESC)){
             isRunning = false;
