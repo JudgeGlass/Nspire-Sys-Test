@@ -2,17 +2,19 @@
 #include <keys.h>
 #include <stdio.h>
 
-int main(){
-    const scr_type_t LCD = lcd_type();
+#include "os/graphics.h"
 
-    char *screen = malloc(320 * 240 * sizeof(uint16_t));
+int main(){
+    // const scr_type_t LCD = lcd_type();
+
+    uint16_t *screen = malloc(320 * 240 * sizeof(uint16_t));
     memset(screen, 0xFF, 320*240*sizeof(uint16_t));
-    screen[150 + 100 * 320] = (((255 + 0 + 0) / 3) >> 4);
+    screen[150 + 100 * 320] = 0b1111100000000000;
 
 
     for(int x = 20; x < 40; x++){
         for(int y = 20; y < 40; y++){
-            screen[x + y * 320] = (((255 + 0 + 0) / 3) >> 4);
+            screen[x + y * 320] = to16Bit(0, 0, 0xF);
         }
     }
 
@@ -26,6 +28,7 @@ int main(){
 
     lcd_init(SCR_TYPE_INVALID);
     free(screen);
+
 
     return 0;
 }

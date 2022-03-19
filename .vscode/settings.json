@@ -1,5 +1,19 @@
 {
     "files.associations": {
-        "os.h": "c"
+        "os.h": "c",
+        "stdio.h": "c",
+        "keys.h": "c",
+        "stdint.h": "c",
+        "stdlib.h": "c",
+        "math.h": "c",
+        "lauxlib.h": "c",
+        "ngc.h": "c",
+        "nucleus.h": "c",
+        "hook.h": "c",
+        "libndls.h": "c",
+        "errno.h": "c",
+        "unistd.h": "c",
+        "stat.h": "c",
+        "types.h": "c"
     }
 }
